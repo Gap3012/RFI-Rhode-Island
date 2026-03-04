@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(done)",
+      "Bash(__NEW_LINE_8b317ac382b4b6cd__ echo:*)",
+      "Bash(__NEW_LINE_7f82f4dbb15ab4b4__ echo:*)",
+      "Bash(pdflatex:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

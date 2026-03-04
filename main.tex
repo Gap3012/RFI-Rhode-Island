@@ -1,0 +1,119 @@
+\documentclass[letterpaper]{article}
+
+% =====================================================================
+%  RFP VARIABLES — Update these for each new proposal
+% =====================================================================
+\newcommand{\rfpTitle}{RFP \#000}
+\newcommand{\rfpSubtitle}{Lorem Ipsum Dolor Sit Amet Service}
+\newcommand{\rfpDocType}{Technical Proposal}
+\newcommand{\clientName}{Agency Name}
+\newcommand{\clientDepartment}{Department of Lorem Ipsum}
+\newcommand{\clientDivision}{Dolor Sit Amet Division}
+% Client logo — drop any of these at img/ and it gets picked up automatically:
+%   client-logo.png, client-logo.jpg, client-logo.jpeg, client-logo.pdf
+\newcommand{\clientLogoWidth}{6cm}
+% =====================================================================
+
+\input{package}
+
+% Horizontal rule command
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\onehalfspacing
+\parindent=0pt
+
+% Sections numbered 1, 2, 3 to mirror proposal structure
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\begin{document}
+
+% ===== HEADER / FOOTER =====
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=1cm]{img/sentry-logo-new.jpg}}
+\fancyhead[R]{\small\rightmark}
+\fancyfoot[C]{\thepage}
+\pagenumbering{arabic}
+
+% ===== TITLE PAGE =====
+\begin{titlepage}
+\begin{center}
+
+\vspace*{0.5cm}
+
+% Client logo at top — checks png, jpg, jpeg, pdf; skips if none found
+\IfFileExists{img/client-logo.png}{\includegraphics[width=\clientLogoWidth]{img/client-logo.png}\\[1.5cm]}{%
+\IfFileExists{img/client-logo.jpg}{\includegraphics[width=\clientLogoWidth]{img/client-logo.jpg}\\[1.5cm]}{%
+\IfFileExists{img/client-logo.jpeg}{\includegraphics[width=\clientLogoWidth]{img/client-logo.jpeg}\\[1.5cm]}{%
+\IfFileExists{img/client-logo.pdf}{\includegraphics[width=\clientLogoWidth]{img/client-logo.pdf}\\[1.5cm]}{%
+    \vspace{3cm}
+}}}}
+
+% RFP Title
+{\Huge\bfseries\color{MidnightBlue} \rfpTitle}\\[0.4cm]
+{\LARGE\color{MidnightBlue} \rfpSubtitle}\\[1.2cm]
+
+\HRule\\[0.5cm]
+{\LARGE\bfseries\color{MidnightBlue} \rfpDocType}\\[0.3cm]
+{\large Submitted by Fejost LLC dba Sentry Management Solutions}\\[0.1cm]
+\HRule\\[0.5cm]
+
+{\large Submitted to:}\\[0.2cm]
+{\large \clientName}\\
+{\large \clientDepartment}\\
+{\large \clientDivision}\\[0.5cm]
+
+{\large \today}
+
+\vfill
+
+% Sentry logo at bottom
+\includegraphics[width=5cm]{img/sentry-logo-new.jpg}\\[0.4cm]
+{\large\textbf{Fejost LLC dba Sentry Management Solutions}}\\[0.2cm]
+{\normalsize (844) 573-6879 $\cdot$ info@sentryms.com}
+
+\end{center}
+\end{titlepage}
+
+% ===== PROPOSAL SECTIONS =====
+
+% Section 1: Transmittal Letter
+\input{text/01_transmittal}
+\newpage
+
+% Table of Contents
+\section{\texorpdfstring{\color{MidnightBlue}Table of Contents}{Table of Contents}}
+\makeatletter
+\@starttoc{toc}
+\makeatother
+\newpage
+
+% Section 2: Executive Summary
+\input{text/02_executive_summary}
+\newpage
+
+% Section 3: Qualifications and Experience
+\input{text/03_qualifications}
+\newpage
+
+% Section 4: Technical Approach
+\input{text/04_technical_approach}
+\newpage
+
+% Section 5: Staffing Plan
+\input{text/05_staffing}
+\newpage
+
+% Section 6: References / Past Performance
+\input{text/06_references}
+\newpage
+
+% Section 7: Pricing
+\input{text/07_pricing}
+\newpage
+
+% Section 8: Appendices
+\input{text/08_appendices}
+
+\end{document}

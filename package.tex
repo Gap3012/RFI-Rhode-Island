@@ -1,0 +1,105 @@
+% ===== PAGE LAYOUT =====
+\usepackage[margin=1cm, includehead, includefoot, headheight=56pt, footskip=20pt]{geometry}
+
+% ===== TYPOGRAPHY =====
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[protrusion=true, expansion=false]{microtype}
+\usepackage{setspace}
+\renewcommand{\arraystretch}{1.5}
+
+% ===== GRAPHICS & FIGURES =====
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{pdfpages}
+\captionsetup[figure]{labelformat=empty}
+\captionsetup{justification=centering, margin=1cm}
+
+% ===== COLORS =====
+\usepackage[dvipsnames, table]{xcolor}
+\definecolor{tableHeader}{RGB}{0, 51, 102}
+\definecolor{tableLineOne}{RGB}{245, 245, 245}
+\definecolor{tableLineTwo}{RGB}{224, 224, 224}
+\definecolor{colSidebarHead}{HTML}{E0E4E5}
+\definecolor{colSidebarBody}{HTML}{F2F6F6}
+\definecolor{colSidebarFrame}{HTML}{E0E4E5}
+\definecolor{Z1}{HTML}{333333}
+\definecolor{sentryBlue}{HTML}{003366}
+
+% ===== TABLES =====
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{tabularx}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+
+\newcommand{\tableHeaderStyle}{%
+    \rowfont{\leavevmode\color{white}\bfseries}%
+    \rowcolor{tableHeader}%
+}
+
+% ===== LISTS =====
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+% ===== HEADERS & FOOTERS =====
+\usepackage{fancyhdr}
+
+% ===== HYPERLINKS =====
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    pdftitle={\rfpTitle},
+    pdfauthor={Fejost LLC dba Sentry Management Solutions},
+    bookmarks=true
+}
+
+% ===== CALLOUT BOXES =====
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{awesomebox}
+
+\newtcolorbox{sidebar}[1]{
+    boxrule=1pt,
+    colback=colSidebarBody,
+    colbacktitle=colSidebarHead,
+    coltitle=Z1,
+    colframe=colSidebarFrame,
+    outer arc=0pt, arc=0pt,
+    left=10pt, right=10pt, top=10pt, bottom=10pt,
+    toptitle=3pt, bottomtitle=3pt,
+    fonttitle=\sffamily\large,
+    title=#1,
+}
+
+% ===== DIAGRAMS =====
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning, calc}
+
+% ===== ICONS =====
+\usepackage{fontawesome5}
+
+% ===== TOC =====
+\usepackage{etoc}
+
+% ===== APPENDIX =====
+\usepackage{appendix}
+
+% ===== CUSTOM COMMANDS =====
+\newcommand{\mybox}[2]{%
+    \begin{center}%
+        \begin{tikzpicture}%
+            \node[rectangle, draw=#2, top color=#2!10, bottom color=#2!40,
+                  rounded corners=5pt, inner xsep=10pt, inner ysep=8pt, outer ysep=10pt,
+                  text width=0.92\linewidth]{%
+                \begin{minipage}{0.92\linewidth}#1\end{minipage}};%
+        \end{tikzpicture}%
+    \end{center}%
+}
+
+\newcommand{\placeholder}[1]{\textcolor{gray}{\textit{#1}}}
+
+\newcommand{\reqref}[1]{\textbf{\color{MidnightBlue}#1}}

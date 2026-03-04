@@ -1,0 +1,196 @@
+% ===== SECTION 4: TECHNICAL APPROACH =====
+\section{\texorpdfstring{\color{MidnightBlue}Technical Approach}{Technical Approach}}
+
+\subsection{Solution Overview}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\begin{sidebar}{Solution Highlights}
+\begin{itemize}
+    \item \textbf{Lorem ipsum} --- dolor sit amet, consectetur adipiscing elit
+    \item \textbf{Sed do eiusmod} --- tempor incididunt ut labore et dolore
+    \item \textbf{Ut enim ad minim} --- veniam, quis nostrud exercitation
+    \item \textbf{Duis aute irure} --- dolor in reprehenderit in voluptate
+\end{itemize}
+\end{sidebar}
+
+\subsection{Functionality and Features}
+
+\subsubsection{Core Capabilities}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. The following diagram illustrates the proposed solution architecture:
+
+% --- Example TikZ data-flow diagram ---
+\begin{center}
+\begin{tikzpicture}[
+    node distance=1.2cm and 1.5cm,
+    block/.style={rectangle, draw=MidnightBlue, fill=MidnightBlue!8, text width=2.8cm, minimum height=1cm, align=center, rounded corners=3pt, font=\scriptsize},
+    smallblock/.style={rectangle, draw=MidnightBlue!60, fill=MidnightBlue!4, text width=2.2cm, minimum height=0.8cm, align=center, rounded corners=2pt, font=\tiny},
+    arrow/.style={-{Stealth[length=2.5mm]}, thick, MidnightBlue},
+    label/.style={font=\tiny\itshape, MidnightBlue}
+]
+    % Data sources
+    \node[block] (src1) {Data Source\\Alpha};
+    \node[smallblock, right=0.8cm of src1] (proc1) {Processing\\Layer};
+    \node[block, right=0.8cm of proc1] (platform) {\textbf{Sentry}\\Platform};
+    \node[block, right=1.2cm of platform] (output1) {Output\\Module A};
+
+    % Below
+    \node[block, below=1cm of platform] (output2) {Output\\Module B};
+    \node[block, left=1cm of output2] (output3) {Output\\Module C};
+
+    % Above
+    \node[block, above=1cm of platform] (src2) {Data Source\\Beta};
+
+    % Arrows
+    \draw[arrow] (src1) -- node[above, label]{Protocol} (proc1);
+    \draw[arrow] (proc1) -- node[above, label]{Secure} (platform);
+    \draw[arrow] (src2) -- node[right, label]{Feed} (platform);
+    \draw[arrow] (platform) -- (output1);
+    \draw[arrow] (platform) -- (output2);
+    \draw[arrow] (platform) -- (output3);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Requirements Compliance}
+
+% --- Example requirements traceability table ---
+\begin{longtable}{|p{0.8cm}|p{4cm}|p{9cm}|}
+\hline
+\rowcolor{tableHeader}
+\textcolor{white}{\textbf{Req}} & \textcolor{white}{\textbf{RFP Requirement}} & \textcolor{white}{\textbf{Proposed Solution}} \\
+\hline
+\endfirsthead
+A & \placeholder{Requirement description} & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \\ \hline
+B & \placeholder{Requirement description} & Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \\ \hline
+C & \placeholder{Requirement description} & Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \\ \hline
+D & \placeholder{Requirement description} & Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \\ \hline
+\end{longtable}
+
+\subsection{System Architecture}
+
+\begin{longtable}{|p{0.8cm}|p{4cm}|p{9cm}|}
+\hline
+\rowcolor{tableHeader}
+\textcolor{white}{\textbf{Req}} & \textcolor{white}{\textbf{RFP Requirement}} & \textcolor{white}{\textbf{Proposed Solution}} \\
+\hline
+\endfirsthead
+a & \placeholder{Architecture requirement} & Lorem ipsum dolor sit amet, consectetur adipiscing elit. \\ \hline
+b & \placeholder{Architecture requirement} & Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. \\ \hline
+c & \placeholder{Architecture requirement} & Duis aute irure dolor in reprehenderit in voluptate velit esse. \\ \hline
+\end{longtable}
+
+\subsection{Implementation Approach}
+
+\subsubsection{Project Management Methodology}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit:
+
+\begin{itemize}
+    \item \textbf{Dedicated Project Manager:} \placeholder{Name, credentials}
+    \item \textbf{Weekly Status Meetings:} Dolor sit amet, consectetur adipiscing elit
+    \item \textbf{Formal Change Management:} Sed do eiusmod tempor incididunt
+    \item \textbf{Risk Register:} Ut enim ad minim veniam
+\end{itemize}
+
+\subsubsection{Implementation Timeline}
+
+% --- Example implementation timeline table ---
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|c|X|c|}
+\hline
+\rowcolor{tableHeader}
+\textcolor{white}{\textbf{Phase}} &
+\textcolor{white}{\textbf{Activities}} &
+\textcolor{white}{\textbf{Weeks}} \\
+\hline
+1 & \textbf{Project Kickoff \& Discovery} --- Lorem ipsum dolor sit amet, consectetur adipiscing elit & 1--2 \\ \hline
+2 & \textbf{System Configuration} --- Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua & 2--4 \\ \hline
+3 & \textbf{Integration Development} --- Ut enim ad minim veniam, quis nostrud exercitation & 3--7 \\ \hline
+4 & \textbf{Data Migration} --- Duis aute irure dolor in reprehenderit in voluptate & 4--8 \\ \hline
+5 & \textbf{Testing \& QA} --- Excepteur sint occaecat cupidatat non proident & 7--11 \\ \hline
+6 & \textbf{Training} --- Sunt in culpa qui officia deserunt mollit anim & 9--11 \\ \hline
+7 & \textbf{Go-Live \& Stabilization} --- Nemo enim ipsam voluptatem quia voluptas sit aspernatur & 11--13 \\ \hline
+\end{tabularx}
+\caption{\textbf{Proposed Implementation Schedule}}
+\end{table}
+
+% --- Example Gantt-style TikZ timeline ---
+\begin{center}
+\begin{tikzpicture}[
+    x=0.65cm, y=-1cm,
+    phase/.style={draw=MidnightBlue, fill=MidnightBlue!15, minimum height=0.6cm, anchor=west, font=\scriptsize},
+    milestone/.style={diamond, draw=red!80, fill=red!20, minimum size=0.3cm, inner sep=0pt},
+    label/.style={font=\scriptsize, anchor=east}
+]
+    % Week axis
+    \foreach \w in {1,2,...,14} {
+        \node[font=\tiny, above] at (\w, -0.2) {\w};
+    }
+    \node[font=\tiny\bfseries, above] at (7.5, -0.5) {Week};
+
+    % Phases
+    \node[phase, minimum width=1.3cm] at (1, 1) {};
+    \node[label] at (0.8, 1) {Ph 1: Kickoff};
+
+    \node[phase, minimum width=1.95cm] at (2, 2) {};
+    \node[label] at (0.8, 2) {Ph 2: Config};
+
+    \node[phase, minimum width=3.25cm] at (3, 3) {};
+    \node[label] at (0.8, 3) {Ph 3: Integration};
+
+    \node[phase, minimum width=3.25cm] at (4, 4) {};
+    \node[label] at (0.8, 4) {Ph 4: Migration};
+
+    \node[phase, minimum width=3.25cm] at (7, 5) {};
+    \node[label] at (0.8, 5) {Ph 5: Testing};
+
+    \node[phase, minimum width=1.95cm] at (9, 6) {};
+    \node[label] at (0.8, 6) {Ph 6: Training};
+
+    \node[phase, minimum width=1.95cm] at (11, 7) {};
+    \node[label] at (0.8, 7) {Ph 7: Go-Live};
+
+    % Milestones
+    \node[milestone] at (2, 0.3) {};
+    \node[font=\tiny, above right] at (2, 0) {Kickoff};
+
+    \node[milestone] at (7, 0.3) {};
+    \node[font=\tiny, above right] at (7, 0) {Integration};
+
+    \node[milestone] at (11, 0.3) {};
+    \node[font=\tiny, above right] at (10.5, 0) {UAT};
+
+    \node[milestone] at (13, 0.3) {};
+    \node[font=\tiny, above right] at (12.5, 0) {\textbf{GO-LIVE}};
+
+\end{tikzpicture}
+\end{center}
+
+\subsection{Risk Management}
+
+\begin{longtable}{|p{3cm}|p{1.5cm}|p{1.5cm}|p{7.5cm}|}
+\hline
+\rowcolor{tableHeader}
+\textcolor{white}{\textbf{Risk}} &
+\textcolor{white}{\textbf{Likelihood}} &
+\textcolor{white}{\textbf{Impact}} &
+\textcolor{white}{\textbf{Mitigation Strategy}} \\
+\hline
+\endfirsthead
+\placeholder{Risk 1} & Medium & High & Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt. \\ \hline
+\placeholder{Risk 2} & Medium & Medium & Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. \\ \hline
+\placeholder{Risk 3} & Low & Medium & Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. \\ \hline
+\placeholder{Risk 4} & Low & High & Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. \\ \hline
+\end{longtable}
+
+\subsection{Testing Methodology}
+
+\begin{enumerate}
+    \item \textbf{Unit Testing:} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    \item \textbf{Integration Testing:} Sed do eiusmod tempor incididunt ut labore et dolore.
+    \item \textbf{Performance Testing:} Ut enim ad minim veniam, quis nostrud exercitation.
+    \item \textbf{Security Testing:} Duis aute irure dolor in reprehenderit in voluptate.
+    \item \textbf{User Acceptance Testing (UAT):} Excepteur sint occaecat cupidatat non proident.
+\end{enumerate}
