@@ -1,14 +1,14 @@
 \documentclass[letterpaper]{article}
 
 % =====================================================================
-%  RFP VARIABLES — Update these for each new proposal
+%  RFI VARIABLES
 % =====================================================================
-\newcommand{\rfpTitle}{RFP \#000}
-\newcommand{\rfpSubtitle}{Lorem Ipsum Dolor Sit Amet Service}
-\newcommand{\rfpDocType}{Technical Proposal}
-\newcommand{\clientName}{Agency Name}
-\newcommand{\clientDepartment}{Department of Lorem Ipsum}
-\newcommand{\clientDivision}{Dolor Sit Amet Division}
+\newcommand{\rfpTitle}{RFI\#26006369}
+\newcommand{\rfpSubtitle}{Statewide Student Transportation Services}
+\newcommand{\rfpDocType}{Response to Request for Information}
+\newcommand{\clientName}{State of Rhode Island}
+\newcommand{\clientDepartment}{Department of Elementary and Secondary Education}
+\newcommand{\clientDivision}{Division of Statewide Transportation Services}
 % Client logo — drop any of these at img/ and it gets picked up automatically:
 %   client-logo.png, client-logo.jpg, client-logo.jpeg, client-logo.pdf
 \newcommand{\clientLogoWidth}{6cm}
@@ -22,7 +22,7 @@
 \onehalfspacing
 \parindent=0pt
 
-% Sections numbered 1, 2, 3 to mirror proposal structure
+% Sections numbered 1, 2, 3 to mirror response structure
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 
@@ -50,9 +50,10 @@
     \vspace{3cm}
 }}}}
 
-% RFP Title
+% RFI Title
 {\Huge\bfseries\color{MidnightBlue} \rfpTitle}\\[0.4cm]
-{\LARGE\color{MidnightBlue} \rfpSubtitle}\\[1.2cm]
+{\LARGE\color{MidnightBlue} \rfpSubtitle}\\[0.3cm]
+{\large\color{MidnightBlue} for the \clientName}\\[1.2cm]
 
 \HRule\\[0.5cm]
 {\LARGE\bfseries\color{MidnightBlue} \rfpDocType}\\[0.3cm]
@@ -76,9 +77,9 @@
 \end{center}
 \end{titlepage}
 
-% ===== PROPOSAL SECTIONS =====
+% ===== RFI RESPONSE =====
 
-% Section 1: Transmittal Letter
+% Transmittal Letter
 \input{text/01_transmittal}
 \newpage
 
@@ -89,31 +90,42 @@
 \makeatother
 \newpage
 
-% Section 2: Executive Summary
-\input{text/02_executive_summary}
+% Respondent Background
+\input{text/02_company_overview}
 \newpage
 
-% Section 3: Qualifications and Experience
-\input{text/03_qualifications}
+% ===== SECTION C: QUESTIONS TO FIELD =====
+% The following sections mirror RIDE's RFI outline (Section C) for ease of analysis.
+
+% Inquiries Regarding Potential Barriers to Entry (Questions 1-4)
+\input{text/03_barriers_to_entry}
 \newpage
 
-% Section 4: Technical Approach
-\input{text/04_technical_approach}
+% Operational Efficiencies (Questions 1-3)
+\input{text/04_operational_efficiencies}
 \newpage
 
-% Section 5: Staffing Plan
-\input{text/05_staffing}
+% Cost Controls (Questions 1-4)
+\input{text/05_cost_controls}
 \newpage
 
-% Section 6: References / Past Performance
-\input{text/06_references}
+% Routing (Questions 1-3)
+\input{text/06_routing}
 \newpage
 
-% Section 7: Pricing
-\input{text/07_pricing}
+% Company Practices Disclosure (Items 1-3)
+\input{text/07_company_practices}
 \newpage
 
-% Section 8: Appendices
-\input{text/08_appendices}
+% Timeline (Question 1, parts a-d)
+\input{text/08_timeline}
+\newpage
+
+% Information Gathering Templates (Optional)
+\input{text/09_technology}
+\newpage
+
+% Summary Narrative
+\input{text/10_summary}
 
 \end{document}
