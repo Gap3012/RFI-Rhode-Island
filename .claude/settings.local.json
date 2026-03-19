@@ -5,7 +5,21 @@
       "Bash(__NEW_LINE_8b317ac382b4b6cd__ echo:*)",
       "Bash(__NEW_LINE_7f82f4dbb15ab4b4__ echo:*)",
       "Bash(pdflatex:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebSearch",
+      "WebFetch(domain:rhodeislandcurrent.com)",
+      "WebFetch(domain:www.valleybreeze.com)",
+      "WebFetch(domain:www.wpri.com)",
+      "WebFetch(domain:www.schoolbusfleet.com)",
+      "WebFetch(domain:www.eastbayri.com)",
+      "WebFetch(domain:eastbayri.com)",
+      "WebFetch(domain:governor.ri.gov)",
+      "WebFetch(domain:legiscan.com)",
+      "WebFetch(domain:teamster.org)",
+      "Bash(find:*)",
+      "Bash(cd:*)",
+      "Bash(cp main.tex RFI-Rhode-Island.tex)",
+      "Bash(cp main.pdf RFI-Rhode-Island.pdf)"
     ]
   }
 }
