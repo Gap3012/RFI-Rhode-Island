@@ -1,0 +1,128 @@
+% ===== SECTION 8: TIMELINE =====
+\section{\texorpdfstring{\color{MidnightBlue}Timeline}{Timeline}}
+
+\begin{sidebar}{RFI Reference}
+Section C: Questions to Field --- Timeline (Question 1, parts a--d)\\[0.3cm]
+\textbf{RIDE's Proposed Timeline:}\\
+RFP publication: Late spring 2026\\
+Responses due: Summer 2026\\
+Contract award: November 2026\\
+Service start: July 1, 2027 (summer school)
+\end{sidebar}
+
+% ----- Question 1a -----
+\subsection{Question 1(a): Proposed Timeline Modifications}
+\textit{``Is there anything your company or organization would modify within the proposed timeline that would be more conducive to your success?''}
+
+\vspace{0.3cm}
+
+\placeholder{Address whether the timeline works for Sentry and what modifications would improve outcomes. Key points:}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{exclamation-triangle} \textbf{8-Month Transition Is Tight:}] \placeholder{The November 2026 award to July 2027 service start provides approximately 8 months for transition. For a technology provider, this is feasible for software deployment, integration, and training. However, for bus operators who must acquire vehicles, hire/train drivers, establish depots, and build routes, 8 months presents significant risk---particularly if a new operator replaces an incumbent. For context, when the General Assembly originally created the Statewide Transportation System in FY~2009, RIDE phased it in over \textit{three full years} (14~LEAs in 2010, 26 in 2011, all LEAs by 2012). The current timeline asks for a full system transition in eight months.}
+
+    \item[\faIcon{calendar-check} \textbf{Recommended Modification:}] \placeholder{Sentry recommends RIDE consider one or more of the following:}
+    \begin{itemize}
+        \item \placeholder{Move RFP publication to early spring 2026 (March/April) to provide more time for responses}
+        \item \placeholder{Move contract award to September/October 2026 to provide 9--10 months for transition}
+        \item \placeholder{Award the technology/system management contract separately and earlier (e.g., summer 2026) so the technology platform is operational before operators begin their transition}
+        \item \placeholder{Allow a phased service start---summer school as a pilot with full-year service beginning September 2027}
+    \end{itemize}
+\end{description}
+
+% --- Timeline Visualization ---
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tikzpicture}[
+    x=0.75cm, y=-1cm,
+    phase/.style={draw=MidnightBlue, fill=MidnightBlue!15, minimum height=0.6cm, anchor=west, font=\scriptsize},
+    milestone/.style={diamond, draw=red!80, fill=red!20, minimum size=0.3cm, inner sep=0pt},
+    label/.style={font=\scriptsize, anchor=east}
+]
+    % Month axis
+    \foreach \m/\name in {1/Mar,2/Apr,3/May,4/Jun,5/Jul,6/Aug,7/Sep,8/Oct,9/Nov,10/Dec,11/Jan,12/Feb,13/Mar,14/Apr,15/May,16/Jun,17/Jul} {
+        \node[font=\tiny, above, rotate=45, anchor=south west] at (\m, -0.2) {\name};
+    }
+    \node[font=\tiny\bfseries, above] at (5, -0.8) {2026};
+    \node[font=\tiny\bfseries, above] at (14, -0.8) {2027};
+
+    % Phases
+    \node[phase, minimum width=2.25cm] at (3, 1) {};
+    \node[label] at (2.8, 1) {RFP Development};
+
+    \node[phase, minimum width=1.5cm, fill=MidnightBlue!25] at (5, 2) {};
+    \node[label] at (2.8, 2) {RFP Published};
+
+    \node[phase, minimum width=2.25cm] at (5, 3) {};
+    \node[label] at (2.8, 3) {Vendor Responses};
+
+    \node[phase, minimum width=2.25cm] at (7, 4) {};
+    \node[label] at (2.8, 4) {Evaluation};
+
+    \node[phase, minimum width=6cm, fill=MidnightBlue!30] at (9, 5) {};
+    \node[label] at (2.8, 5) {\textbf{Transition}};
+
+    \node[phase, minimum width=1.5cm, fill=red!15] at (15, 6) {};
+    \node[label] at (2.8, 6) {Summer School};
+
+    \node[phase, minimum width=0.75cm, fill=green!15] at (17, 7) {};
+    \node[label] at (2.8, 7) {Full Service};
+
+    % Milestones
+    \node[milestone] at (5, 0.3) {};
+    \node[font=\tiny, above right] at (5, 0) {RFP Out};
+
+    \node[milestone] at (9, 0.3) {};
+    \node[font=\tiny, above right] at (9, 0) {Award};
+
+    \node[milestone] at (15, 0.3) {};
+    \node[font=\tiny, above right] at (14.5, 0) {\textbf{Service Start}};
+
+\end{tikzpicture}
+\end{center}
+
+% ----- Question 1b -----
+\subsection{Question 1(b): Driver Recruitment Timeline}
+\textit{``We are aware of the national driver shortage. Does your company or organization feel like the above timeline allows for the necessary time to recruit the number of drivers needed per what is currently outlined in this scope?''}
+
+\vspace{0.3cm}
+
+\placeholder{Address whether the timeline allows sufficient time for driver recruitment given the national driver shortage.}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{users} \textbf{Scale of Recruitment Challenge:}] \placeholder{RIDE's STS currently requires approximately 334 drivers plus substitutes. If a new operator wins one or more zones, they may need to recruit 50--150+ CDL-endorsed school bus drivers within 6--8 months. In the current labor market, this is extremely challenging.}
+
+    \item[\faIcon{clock} \textbf{CDL Training Timeline:}] \placeholder{A new school bus driver typically requires 6--10 weeks from initial application to road-ready status (background check, CDL training, school bus endorsement, behind-the-wheel training, route familiarization). This means recruitment must begin no later than March 2027 to have drivers ready by July.}
+
+    \item[\faIcon{lightbulb} \textbf{Sentry's Recommendation:}] \placeholder{Allow pre-award recruitment activities. Permit short-listed vendors to begin driver recruitment (at their own risk/cost) before final award, so the pipeline is warm when the contract is executed. Sentry's recruitment technology platform can support this parallel process.}
+\end{description}
+
+% ----- Question 1c -----
+\subsection{Question 1(c): Number of Routes}
+\textit{``How many routes would you likely bid on in an upcoming RFP?''}
+
+\vspace{0.3cm}
+
+\placeholder{Address how many routes Sentry would bid on. Frame this based on Sentry's role:}
+
+\begin{itemize}
+    \item \textbf{As Technology / System Manager:} \placeholder{Sentry would bid to provide technology and system management services across ALL 334 routes statewide. Our platform's value increases with scale---serving all zones enables cross-zone optimization that is impossible when each operator uses a separate system.}
+    \item \textbf{As Technology Partner to a Bus Operator:} \placeholder{Sentry could partner with one or more bus operators to provide technology for specific zones. The number of routes would depend on the partner operator's capacity and zone selection.}
+\end{itemize}
+
+% ----- Question 1d -----
+\subsection{Question 1(d): Fleet Construct Impact}
+\textit{``How does this timeline impact your fleet construct?''}
+
+\vspace{0.3cm}
+
+\placeholder{Address how the timeline affects vehicle procurement. Frame from Sentry's technology perspective:}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{bus} \textbf{Vehicle Procurement Lead Times:}] \placeholder{New school bus delivery currently requires 6--12 months from order. An 8-month transition period may not allow sufficient time for operators to order and receive new vehicles, particularly wheelchair-accessible Type A buses with custom modifications.}
+
+    \item[\faIcon{video} \textbf{Video System Installation:}] \placeholder{The July 1, 2027 mandate requires all new buses to have live digital video violation detection systems. Sentry's camera systems can be installed in 1--2 days per vehicle, but installation must be scheduled after vehicle delivery. A compressed timeline increases the risk of buses entering service without cameras installed.}
+
+    \item[\faIcon{recycle} \textbf{Fleet Transition Strategy:}] \placeholder{Sentry recommends RIDE require outgoing operators to make vehicles available for purchase or lease by incoming operators, reducing the need for new vehicle procurement during the transition period.}
+\end{description}

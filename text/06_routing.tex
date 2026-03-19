@@ -1,0 +1,88 @@
+% ===== SECTION 6: ROUTING =====
+\section{\texorpdfstring{\color{MidnightBlue}Routing}{Routing}}
+
+\begin{sidebar}{RFI Reference}
+Section C: Questions to Field --- Routing (Questions 1--3)
+\end{sidebar}
+
+% ----- Question 1 -----
+\subsection{Question 1: Collaboration with a Centralized Routing Authority}
+\textit{``How do you or would you collaborate with a centralized routing authority, such as the Statewide System Manager?''}
+
+\vspace{0.3cm}
+
+RIDE already operates with a centralized System Manager---\textbf{Transpar}---which currently handles routing and program billing, vendor performance monitoring, customer service support, and coordination with 49~LEAs plus out-of-state placements. This structure validates the System Manager concept. Sentry's response addresses how we would serve as a next-generation System Manager or integrate with an existing authority.
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{project-diagram} \textbf{Sentry as the Next-Generation System Manager:}] \placeholder{Describe how Sentry's platform can serve as an upgraded centralized routing authority---receiving student enrollment data from RIDE's eRIDE system, generating optimized routes using AI-powered algorithms, distributing route assignments to zone operators, and automating the ``expenditure follows the child'' billing that currently generates 700 manual checks per year. This model preserves what works about the current Transpar arrangement while adding capabilities the system needs: real-time GPS dispatch, video violation processing, automated ghost rider detection, and cross-zone route optimization.}
+
+    \item[\faIcon{plug} \textbf{Integration with the Existing Authority:}] \placeholder{If RIDE retains Transpar as System Manager, describe how Sentry's platform integrates via open APIs, GTFS-compatible data exchange, and real-time GPS feeds to augment Transpar's capabilities with technology tools not currently available---particularly routing optimization, video violation detection, and predictive analytics.}
+
+    \item[\faIcon{shield-alt} \textbf{Vendor-Neutral Oversight:}] \placeholder{Emphasize that a centralized routing authority should be independent of bus operators to avoid conflicts of interest. When operators control their own routing, they may optimize for their convenience (minimizing their costs) rather than for system-wide efficiency (minimizing RIDE's costs). The current model---where Transpar sits between RIDE and operators---is structurally sound; the opportunity is to equip that role with modern technology.}
+\end{description}
+
+\mybox{
+\textbf{\faIcon{lightbulb} Recommendation:} RIDE's existing System Manager model is a proven structure. The 2027 procurement is an opportunity to upgrade the technology powering that role. Sentry recommends that the RFP formalize the System Manager as a separate technology procurement, ensuring that the platform serving all 49~LEAs and 334 routes is selected on the basis of technological capability---not bundled as an afterthought into a bus operator's bid.
+}{MidnightBlue}
+
+% ----- Question 2 -----
+\subsection{Question 2: Key Performance Indicators (KPIs)}
+\textit{``What Key Performance Indicators (KPIs) do you believe the State should be using to measure routing efficiency across the STS?''}
+
+\vspace{0.3cm}
+
+Sentry recommends the following KPIs for measuring routing efficiency across the STS:
+
+\vspace{0.3cm}
+
+\begin{longtable}{|p{4cm}|p{5.5cm}|p{4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textcolor{white}{\textbf{KPI}} &
+\textcolor{white}{\textbf{Definition}} &
+\textcolor{white}{\textbf{Target / Benchmark}} \\
+\hline
+\endfirsthead
+
+\textbf{On-Time Performance} & \% of routes arriving within X minutes of scheduled time & \placeholder{$\geq$ 95\%} \\ \hline
+
+\textbf{Deadhead Ratio} & Deadhead miles $\div$ total miles & \placeholder{$\leq$ 20\% (currently 36--51\% in Zones C/D)} \\ \hline
+
+\textbf{Students Per Route} & Average students transported per route per day & \placeholder{Varies by route type} \\ \hline
+
+\textbf{Ride Time Compliance} & \% of students with ride times $\leq$ maximum (IEP/policy) & \placeholder{$\geq$ 98\%} \\ \hline
+
+\textbf{Vehicle Utilization} & Revenue hours $\div$ total available hours & \placeholder{$\geq$ 70\%} \\ \hline
+
+\textbf{Route Change Turnaround} & Time from route change request to service delivery & \placeholder{$\leq$ 48 hours} \\ \hline
+
+\textbf{Cost Per Student Per Day} & Total daily cost $\div$ students transported & \placeholder{Benchmark by zone} \\ \hline
+
+\textbf{Ghost Rider Rate} & Enrolled students who never ride $\div$ total enrolled & \placeholder{$\leq$ 5\% (currently $\sim$16\%)} \\ \hline
+
+\textbf{Spare Ratio} & Spare vehicles $\div$ routes operated & \placeholder{15--20\%} \\ \hline
+
+\textbf{Road Call Rate} & Mechanical failures per 100,000 miles & \placeholder{$\leq$ 5.0} \\ \hline
+\end{longtable}
+
+\begin{sidebar}{Data-Driven Accountability}
+These KPIs are only meaningful if measured independently from bus operators. Transpar currently monitors vendor performance, but the next-generation System Manager platform should collect, calculate, and report these metrics directly to RIDE from GPS, ridership, and operational data---not from operator self-reports. Sentry's platform generates KPI dashboards automatically from real-time vehicle and ridership data, giving RIDE the same independent oversight across all zones and operators.
+\end{sidebar}
+
+% ----- Question 3 -----
+\subsection{Question 3: Turnaround Time for Route Changes}
+\textit{``What is your company or organization's reasonable timeframe to turn around service delivery for any route changes or additions within the proposed scope?''}
+
+\vspace{0.3cm}
+
+\placeholder{Describe Sentry's capability for rapid route modification. Key points:}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{bolt} \textbf{Same-Day Changes:}] \placeholder{Minor modifications (stop additions, time adjustments, student additions to existing routes) can be processed and communicated to drivers within 2--4 hours.}
+
+    \item[\faIcon{calendar-day} \textbf{24--48 Hour Changes:}] \placeholder{New route creation, route splitting, or significant restructuring can be modeled, optimized, and deployed within 24--48 hours.}
+
+    \item[\faIcon{calendar-week} \textbf{Seasonal / Systemic Changes:}] \placeholder{Large-scale changes (zone restructuring, summer-to-school-year transitions, new school openings) require 2--4 weeks for modeling, driver bidding, and communication.}
+\end{description}
+
+\placeholder{Contrast this with the current system where route changes may depend on operator willingness and capacity. A centralized routing platform ensures that RIDE---not the operator---controls the pace of change.}

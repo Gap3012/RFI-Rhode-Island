@@ -1,0 +1,131 @@
+% ===== SECTION 9: INFORMATION GATHERING TEMPLATES (OPTIONAL) =====
+\section{\texorpdfstring{\color{MidnightBlue}Information Gathering Templates (Optional)}{Information Gathering Templates (Optional)}}
+
+\textit{``RIDE is interested in learning more about potential bidders' school bus operations and services offered. Please complete the following using the templates provided.''}
+
+\begin{sidebar}{RFI Reference}
+Section C: Information Gathering Templates (Optional) --- Technological Capabilities\\[0.3cm]
+\textit{Note: Sentry's response focuses on the Technological Capabilities template, consistent with our positioning as a technology and system management provider. Staffing model and safety/compliance practices are addressed in the Company Practices Disclosure section above.}
+\end{sidebar}
+
+\subsection{Technological Capabilities}
+
+This section describes Sentry's technology platform and its applicability to RIDE's Statewide Transportation System.
+
+\subsubsection{Platform Overview}
+
+\placeholder{2--3 paragraphs describing the Sentry technology platform at a high level. Cover the overall architecture (cloud-based, real-time, multi-tenant), the core modules, and the integration philosophy (open APIs, vendor-neutral).}
+
+\vspace{0.3cm}
+
+RIDE has already taken steps toward technology modernization---launching a \textbf{Parent GPS App} in October~2024 and requiring operators to use digital systems for proactive outreach to LEAs and families for earlier sign-up. Sentry's platform is designed to integrate with and extend these existing investments, providing the unified backend that connects parent-facing tools, operator dispatch systems, RIDE's eRIDE student information portal, and the billing infrastructure that currently processes 700 manual checks per year from districts.
+
+% --- Platform Architecture Diagram ---
+\begin{center}
+\begin{tikzpicture}[
+    node distance=1.2cm and 1.5cm,
+    block/.style={rectangle, draw=MidnightBlue, fill=MidnightBlue!8, text width=2.8cm, minimum height=1cm, align=center, rounded corners=3pt, font=\scriptsize},
+    smallblock/.style={rectangle, draw=MidnightBlue!60, fill=MidnightBlue!4, text width=2.2cm, minimum height=0.8cm, align=center, rounded corners=2pt, font=\tiny},
+    arrow/.style={-{Stealth[length=2.5mm]}, thick, MidnightBlue},
+    label/.style={font=\tiny\itshape, MidnightBlue}
+]
+    % Data sources (left)
+    \node[block] (sis) {Student\\Information\\System};
+    \node[block, below=0.8cm of sis] (gps) {Vehicle GPS\\Telematics};
+    \node[block, below=0.8cm of gps] (camera) {Camera \&\\Video Systems};
+
+    % Central platform
+    \node[block, right=2cm of gps, minimum height=2cm, text width=3.2cm, fill=MidnightBlue!15] (platform) {\textbf{Sentry}\\
+    \textbf{Platform}\\[0.2cm]
+    \tiny Routing $\cdot$ Dispatch\\
+    \tiny Analytics $\cdot$ Fleet};
+
+    % Outputs (right)
+    \node[block, right=2cm of platform] (ride) {RIDE\\Dashboard};
+    \node[block, above=0.8cm of ride] (parent) {Parent\\Notifications};
+    \node[block, below=0.8cm of ride] (driver) {Driver\\App};
+
+    % Below
+    \node[block, below=0.8cm of driver] (violation) {Violation\\Processing};
+
+    % Arrows
+    \draw[arrow] (sis) -- node[above, label]{API} (platform);
+    \draw[arrow] (gps) -- node[above, label]{Real-Time} (platform);
+    \draw[arrow] (camera) -- node[above, label]{Video Feed} (platform);
+    \draw[arrow] (platform) -- (ride);
+    \draw[arrow] (platform) -- (parent);
+    \draw[arrow] (platform) -- (driver);
+    \draw[arrow] (platform) -- (violation);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Routing Optimization}
+
+\placeholder{Describe the routing engine in detail. Key capabilities:}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{route} \textbf{Multi-Objective Optimization:}] \placeholder{Algorithm simultaneously minimizes total route time, deadhead miles, and ride time per student while respecting constraints (vehicle capacity, wheelchair positions, bell times, maximum ride time per IEP).}
+
+    \item[\faIcon{map-marked-alt} \textbf{Geographic Clustering:}] \placeholder{Automatic identification of student clusters that can be efficiently served by a single route, accounting for road network topology (not just straight-line distance).}
+
+    \item[\faIcon{retweet} \textbf{Scenario Modeling:}] \placeholder{``What-if'' analysis for zone restructuring, van conversion, school consolidation, and bell-time staggering. RIDE can model the impact of policy changes before implementing them.}
+
+    \item[\faIcon{sync} \textbf{Continuous Optimization:}] \placeholder{Routes are not static. The system re-optimizes as students enroll/withdraw, schools open/close, and traffic patterns change.}
+\end{description}
+
+\subsubsection{Real-Time Dispatch \& GPS Tracking}
+
+\placeholder{Describe dispatch and tracking capabilities:}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{satellite} \textbf{Live Vehicle Tracking:}] \placeholder{All vehicles tracked in real-time via GPS with X-second update intervals. Dispatchers see all zones on a single map.}
+
+    \item[\faIcon{bell} \textbf{Automated Alerts:}] \placeholder{System generates alerts for late departures, route deviations, speed violations, unauthorized stops, extended idling, and missed pickups.}
+
+    \item[\faIcon{mobile-alt} \textbf{Parent Communication:}] \placeholder{Parents receive real-time ETA notifications, arrival alerts, and delay notifications via mobile app or SMS.}
+\end{description}
+
+\subsubsection{Live Digital Video Violation Detection}
+
+\mybox{
+\textbf{\faIcon{video} Alignment with 2025 Legislation:} Rhode Island's Live Digital Video Violation Detection Systems act requires all new school buses to be equipped with these systems by July 1, 2027, and all buses by July 1, 2032. Sentry's video platform is designed to meet this mandate.
+}{MidnightBlue}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{camera} \textbf{Camera Hardware:}] \placeholder{Describe camera systems---exterior stop-arm cameras, multi-angle coverage, resolution, night/weather capability, tamper-proof design.}
+
+    \item[\faIcon{brain} \textbf{AI-Powered Detection:}] \placeholder{Describe how the system uses computer vision / AI to automatically identify stop-arm violations, capture license plates, and generate evidence packages for prosecution.}
+
+    \item[\faIcon{gavel} \textbf{Violation Processing Pipeline:}] \placeholder{Describe the end-to-end workflow: detection → human review → citation issuance → court/tribunal filing → revenue collection. Reference the revenue distribution model (30\% municipality, 30\% vendor, 40\% state; or 75/12.5/12.5 for Providence/Cumberland).}
+
+    \item[\faIcon{dollar-sign} \textbf{Revenue Potential:}] \placeholder{Reference the Providence pilot (October 2024 -- June 2025): 7,000+ violations detected, approximately \$300K in revenue during FY2025. Describe how scaling this statewide across 334 routes could generate \$X in annual revenue while improving student safety.}
+\end{description}
+
+\subsubsection{Analytics \& Reporting}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{chart-bar} \textbf{RIDE Executive Dashboard:}] \placeholder{Describe the state-level dashboard showing KPIs across all zones, operators, and route types in real-time.}
+
+    \item[\faIcon{file-alt} \textbf{Automated Reporting:}] \placeholder{Describe scheduled reports---daily service summaries, weekly KPI scorecards, monthly cost analyses, annual performance reviews.}
+
+    \item[\faIcon{search} \textbf{Ad Hoc Analysis:}] \placeholder{Describe self-service analytics tools that allow RIDE staff to query data, build custom reports, and export to standard formats.}
+
+    \item[\faIcon{user-shield} \textbf{FERPA Compliance:}] \placeholder{Describe data security measures for student information---encryption at rest and in transit, role-based access controls, audit logging, and compliance with FERPA and RI student privacy laws.}
+\end{description}
+
+\subsubsection{Integration Capabilities}
+
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\rowcolor{tableHeader}
+\textcolor{white}{\textbf{System}} &
+\textcolor{white}{\textbf{Integration Method}} &
+\textcolor{white}{\textbf{Data Exchanged}} \\
+\hline
+eRIDE (RIDE's Student Portal) & API / Flat File & Enrollment, addresses, IEP transportation plans, school assignments, annual sign-up data \\ \hline
+RIDE Parent GPS App & API / GTFS-RT & Real-time vehicle location, ETA, arrival notifications (extending RIDE's existing October~2024 deployment) \\ \hline
+GPS / Telematics Providers & API / GTFS-RT & Vehicle location, speed, engine diagnostics \\ \hline
+Camera / Video Systems & API / SDK & Video feeds, violation events, evidence packages \\ \hline
+LEA Billing / State Aid & API / Export & Automated ``expenditure follows the child'' cost allocation, replacing 700 annual manual checks with real-time per-student billing \\ \hline
+RIDE Reporting Systems & API / Dashboard & KPIs, compliance reports, audit data \\ \hline
+\end{tabularx}

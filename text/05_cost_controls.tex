@@ -1,0 +1,81 @@
+% ===== SECTION 5: COST CONTROLS =====
+\section{\texorpdfstring{\color{MidnightBlue}Cost Controls}{Cost Controls}}
+
+\begin{sidebar}{RFI Reference}
+Section C: Questions to Field --- Cost Controls (Questions 1--4)\\[0.3cm]
+\textit{Note: Per the RFI instructions, no pricing information is included. This section describes methodologies only.}
+\end{sidebar}
+
+% ----- Question 1 -----
+\subsection{Question 1: Cost Per Bus Per Day}
+\textit{``How do you address and apply cost per bus per day? (no pricing info, but explain your methodology)''}
+
+\vspace{0.3cm}
+
+\placeholder{Explain how Sentry's analytics platform calculates and tracks cost per bus per day as a management tool. This is methodology, not pricing. Key components to address:}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{calculator} \textbf{Cost Components:}] \placeholder{Describe the cost elements rolled into the per-bus-per-day metric: driver wages and benefits, fuel, maintenance (scheduled + unscheduled), insurance, depreciation/lease cost, overhead allocation, and administrative burden.}
+
+    \item[\faIcon{layer-group} \textbf{Vehicle Type Stratification:}] Our methodology stratifies cost per bus per day by vehicle type, recognizing that the cost profile of a 10-passenger van differs significantly from a Type A wheelchair-accessible bus or a Type C/D full-size bus. \placeholder{Describe how this stratification enables more accurate budgeting and identifies which routes could benefit from right-sizing vehicles.}
+
+    \item[\faIcon{chart-line} \textbf{Trend Analysis:}] \placeholder{Describe how the platform tracks this metric over time to identify cost creep, seasonal variation, and the impact of efficiency initiatives (e.g., deadhead reduction, van conversion).}
+\end{description}
+
+% ----- Question 2 -----
+\subsection{Question 2: Cost Per Mile}
+\textit{``What is your company's cost per mile methodology?''}
+
+\vspace{0.3cm}
+
+\placeholder{Describe Sentry's cost-per-mile methodology. Key points:}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{road} \textbf{Total Cost Per Mile:}] \placeholder{All-in cost divided by total revenue miles (excluding deadhead). This gives the true cost of productive service.}
+
+    \item[\faIcon{gas-pump} \textbf{Fuel Cost Per Mile:}] \placeholder{Tracked separately to isolate fuel price volatility from operational efficiency. GPS-verified mileage eliminates odometer discrepancies.}
+
+    \item[\faIcon{wrench} \textbf{Maintenance Cost Per Mile:}] \placeholder{Tracked by vehicle age, type, and maintenance category (PM vs. breakdown) to identify vehicles approaching end-of-economic-life.}
+
+    \item[\faIcon{divide} \textbf{Loaded vs. Deadhead Mile Distinction:}] \placeholder{Critical distinction---cost per \textit{loaded} mile (with students aboard) is the true efficiency metric. Our platform separates these automatically via GPS geofencing at school and student pickup locations.}
+\end{description}
+
+\begin{sidebar}{Cost Transparency for RIDE}
+RIDE currently uses an ``expenditure follows the child'' billing methodology, where the total cost of a route is proportionally divided among LEAs based on the number of students each district has on that route. Today, this billing process generates approximately 700 checks per year from districts to RIDE---an outdated manual system that RIDE's own October~2024 overview identifies as a weakness. Sentry's platform automates this cost allocation in real-time, tying GPS-verified route data directly to per-student billing and eliminating manual reconciliation. As an independent technology provider, Sentry gives RIDE visibility into cost metrics across all operators and zones---eliminating the information asymmetry that exists when operators self-report their own cost data.
+\end{sidebar}
+
+% ----- Question 3 -----
+\subsection{Question 3: Spare Ratio Philosophy}
+\textit{``What is your company's spare ratio philosophy?''}
+
+\vspace{0.3cm}
+
+\placeholder{Describe Sentry's approach to spare vehicle management. This is an area where technology can significantly reduce costs.}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{percent} \textbf{Target Spare Ratio:}] \placeholder{Industry standard is 15--20\% spare ratio. Describe Sentry's recommended target and how it varies by vehicle type (higher for older fleets, lower for newer fleets with warranty coverage).}
+
+    \item[\faIcon{sync-alt} \textbf{Dynamic Spare Deployment:}] \placeholder{Describe how the platform tracks which spares are deployed daily, identifies patterns (e.g., certain routes or vehicle types that consistently pull spares), and flags when spare utilization trends upward---a leading indicator of fleet health problems.}
+
+    \item[\faIcon{balance-scale} \textbf{Right-Sizing the Spare Pool:}] \placeholder{Describe how analytics can identify opportunities to reduce spare count without impacting service reliability---e.g., if PM compliance improves and MDBF increases, fewer spares are needed.}
+\end{description}
+
+% ----- Question 4 -----
+\subsection{Question 4: Average Driver Hours Per Route}
+\textit{``How do you address and apply average driver hours per route?''}
+
+\vspace{0.3cm}
+
+\placeholder{Describe how Sentry measures and optimizes average driver hours per route.}
+
+\begin{description}[style=nextline, leftmargin=0.5cm]
+    \item[\faIcon{clock} \textbf{Components of Driver Hours:}] \placeholder{Break down the metric: pre-trip inspection, deadhead to first pickup, loaded service time, deadhead return, post-trip inspection, and administrative time. The platform captures each component separately via GPS and driver app timestamps.}
+
+    \item[\faIcon{compress-arrows-alt} \textbf{Optimization Levers:}] \placeholder{Describe how each component can be reduced: deadhead reduction (routing optimization), pre/post-trip efficiency (digital inspections), and administrative time reduction (automated timekeeping).}
+
+    \item[\faIcon{users} \textbf{Split-Shift vs. Straight-Time Analysis:}] \placeholder{Describe how the platform models whether split-shift assignments (AM + PM with unpaid break) or straight-time assignments (driver stays on clock for midday routes) are more cost-effective for each zone.}
+\end{description}
+
+\mybox{
+\textbf{\faIcon{info-circle} Note on RIDE's Current Data:} The RFI data shows average route times ranging from 4h28m (Zone~A3) to 7h05m (Zone~D) including deadhead. Sentry's platform would decompose these averages into their component parts, enabling RIDE to identify exactly where time (and money) is being lost on each route. Critically, this analysis must account for the system's changing demand profile: PCCT students---who constitute 50.87\% of riders---are subject to regional boundaries, while Special Education (24.29\%) and Homeless/Foster Care (24.84\%) riders are federally mandated regardless of region. A driver hour optimization that works for a predictable PCCT route may not apply to a McKinney-Vento route where student addresses change frequently.
+}{MidnightBlue}
