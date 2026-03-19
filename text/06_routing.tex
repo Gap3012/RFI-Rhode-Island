@@ -14,11 +14,11 @@ Section C: Questions to Field --- Routing (Questions 1--3)
 RIDE already operates with a centralized System Manager---\textbf{Transpar}---which currently handles routing and program billing, vendor performance monitoring, customer service support, and coordination with 49~LEAs plus out-of-state placements. This structure validates the System Manager concept. Sentry's response addresses how we would serve as a next-generation System Manager or integrate with an existing authority.
 
 \begin{description}[style=nextline, leftmargin=0.5cm]
-    \item[\faIcon{project-diagram} \textbf{Sentry as the Next-Generation System Manager:}] \placeholder{Describe how Sentry's platform can serve as an upgraded centralized routing authority---receiving student enrollment data from RIDE's eRIDE system, generating optimized routes using AI-powered algorithms, distributing route assignments to zone operators, and automating the ``expenditure follows the child'' billing that currently generates 700 manual checks per year. This model preserves what works about the current Transpar arrangement while adding capabilities the system needs: real-time GPS dispatch, video violation processing, automated ghost rider detection, and cross-zone route optimization.}
+    \item[\faIcon{project-diagram} \textbf{Sentry as the Next-Generation System Manager:}] Sentry's platform is purpose-built to serve as a next-generation centralized routing authority. The system ingests student enrollment data (via API integration with RIDE's eRIDE system), applies AI-powered optimization algorithms to generate routes that minimize deadhead, ride time, and vehicle count, and distributes route assignments electronically to zone operators with driver manifests, turn-by-turn directions, and student-specific requirements (wheelchair, aide, IEP accommodations). The platform automates the ``expenditure follows the child'' billing methodology---using GPS-verified ridership data to allocate costs proportionally among LEAs in real time, replacing the current process that generates approximately 700 manual checks per year from districts to RIDE. Critically, this model preserves what works about the current Transpar System Manager arrangement (centralized coordination across 49~LEAs, vendor-neutral oversight) while adding capabilities the system currently lacks: real-time GPS dispatch with geofenced arrival/departure alerts, automated ghost rider detection (flagging enrolled students who have not boarded a vehicle in 10+ consecutive school days), live video violation processing under the new camera mandate, and cross-zone route optimization that the current zone-siloed approach cannot achieve. Sentry manages this exact model for MTA Access-A-Ride at 10$\times$ RIDE's scale---coordinating 150+ transportation providers, tracking 15,000 vehicles, and dispatching 10,000+ daily trips through a single centralized platform.
 
-    \item[\faIcon{plug} \textbf{Integration with the Existing Authority:}] \placeholder{If RIDE retains Transpar as System Manager, describe how Sentry's platform integrates via open APIs, GTFS-compatible data exchange, and real-time GPS feeds to augment Transpar's capabilities with technology tools not currently available---particularly routing optimization, video violation detection, and predictive analytics.}
+    \item[\faIcon{plug} \textbf{Integration with the Existing Authority:}] If RIDE retains Transpar or another entity as System Manager, Sentry's platform integrates seamlessly as the technology layer beneath that authority. Our architecture is built on open REST APIs and supports GTFS-RT (General Transit Feed Specification -- Real Time) data exchange, enabling bidirectional data flow with any routing or dispatch system. Sentry would provide real-time GPS vehicle feeds, AI-powered route optimization recommendations, video violation detection and processing, predictive analytics (demand forecasting, fleet lifecycle modeling, driver shortage early warning), and automated KPI dashboards---capabilities that augment the System Manager's operational decision-making without duplicating administrative functions. We have integrated with 12+ third-party dispatch, routing, and GIS systems in our current operations, and our platform is designed to be additive, not competitive, to existing management structures.
 
-    \item[\faIcon{shield-alt} \textbf{Vendor-Neutral Oversight:}] \placeholder{Emphasize that a centralized routing authority should be independent of bus operators to avoid conflicts of interest. When operators control their own routing, they may optimize for their convenience (minimizing their costs) rather than for system-wide efficiency (minimizing RIDE's costs). The current model---where Transpar sits between RIDE and operators---is structurally sound; the opportunity is to equip that role with modern technology.}
+    \item[\faIcon{shield-alt} \textbf{Vendor-Neutral Oversight:}] A centralized routing authority must be independent of bus operators to avoid structural conflicts of interest. When operators control their own routing, they optimize for their convenience---minimizing \textit{their} costs (fewer route changes, fixed depot assignments, predictable schedules) rather than minimizing \textit{RIDE's} costs (shortest deadhead, fewest vehicles, optimal student ride times). Operator-controlled routing also creates information asymmetry: RIDE cannot verify whether a proposed route is truly optimal or merely convenient for the operator. The current model---where Transpar sits between RIDE and operators as an independent System Manager---is structurally sound and should be preserved. The opportunity in the 2027 procurement is to equip that role with modern technology: AI optimization, real-time GPS verification, and automated performance measurement that gives RIDE objective, operator-independent data on every route in the system. Sentry's independence as a technology provider---with no fleet ownership, no driver employment, and no financial interest in any particular route configuration---makes us a natural fit for this vendor-neutral oversight role.
 \end{description}
 
 \mybox{
@@ -44,25 +44,25 @@ Sentry recommends the following KPIs for measuring routing efficiency across the
 \hline
 \endfirsthead
 
-\textbf{On-Time Performance} & \% of routes arriving within X minutes of scheduled time & \placeholder{$\geq$ 95\%} \\ \hline
+\textbf{On-Time Performance} & \% of routes arriving within X minutes of scheduled time & $\geq$ 95\% (within 10 minutes of scheduled arrival; measured by GPS geofence at school locations) \\ \hline
 
-\textbf{Deadhead Ratio} & Deadhead miles $\div$ total miles & \placeholder{$\leq$ 20\% (currently 36--51\% in Zones C/D)} \\ \hline
+\textbf{Deadhead Ratio} & Deadhead miles $\div$ total miles & $\leq$ 20\% system-wide (currently 36--51\% in Zones C/D); zone-level targets should reflect geography \\ \hline
 
-\textbf{Students Per Route} & Average students transported per route per day & \placeholder{Varies by route type} \\ \hline
+\textbf{Students Per Route} & Average students transported per route per day & PCCT: $\geq$ 8; Special Ed: $\geq$ 3; McKinney-Vento: varies (baseline current averages, then set improvement targets) \\ \hline
 
-\textbf{Ride Time Compliance} & \% of students with ride times $\leq$ maximum (IEP/policy) & \placeholder{$\geq$ 98\%} \\ \hline
+\textbf{Ride Time Compliance} & \% of students with ride times $\leq$ maximum (IEP/policy) & $\geq$ 98\% (IEP-mandated maximums are non-negotiable; policy maximums tracked separately) \\ \hline
 
-\textbf{Vehicle Utilization} & Revenue hours $\div$ total available hours & \placeholder{$\geq$ 70\%} \\ \hline
+\textbf{Vehicle Utilization} & Revenue hours $\div$ total available hours & $\geq$ 70\% revenue hours of total available hours (multi-run chaining improves this metric) \\ \hline
 
-\textbf{Route Change Turnaround} & Time from route change request to service delivery & \placeholder{$\leq$ 48 hours} \\ \hline
+\textbf{Route Change Turnaround} & Time from route change request to service delivery & $\leq$ 48 hours for new routes; $\leq$ 4 hours for stop additions to existing routes \\ \hline
 
-\textbf{Cost Per Student Per Day} & Total daily cost $\div$ students transported & \placeholder{Benchmark by zone} \\ \hline
+\textbf{Cost Per Student Per Day} & Total daily cost $\div$ students transported & Establish zone-level baselines in Year~1; target 5\% annual reduction through optimization \\ \hline
 
-\textbf{Ghost Rider Rate} & Enrolled students who never ride $\div$ total enrolled & \placeholder{$\leq$ 5\% (currently $\sim$16\%)} \\ \hline
+\textbf{Ghost Rider Rate} & Enrolled students who never ride $\div$ total enrolled & $\leq$ 5\% (currently $\sim$16\% with 550 ghost riders; automated ridership verification via GPS boarding data) \\ \hline
 
-\textbf{Spare Ratio} & Spare vehicles $\div$ routes operated & \placeholder{15--20\%} \\ \hline
+\textbf{Spare Ratio} & Spare vehicles $\div$ routes operated & 15--20\% system-wide; adjusted per zone based on fleet age and MDBF data \\ \hline
 
-\textbf{Road Call Rate} & Mechanical failures per 100,000 miles & \placeholder{$\leq$ 5.0} \\ \hline
+\textbf{Road Call Rate} & Mechanical failures per 100,000 miles & $\leq$ 5.0 per 100,000 miles; trended monthly by zone and vehicle type \\ \hline
 \end{longtable}
 
 \begin{sidebar}{Data-Driven Accountability}
@@ -75,14 +75,14 @@ These KPIs are only meaningful if measured independently from bus operators. Tra
 
 \vspace{0.3cm}
 
-\placeholder{Describe Sentry's capability for rapid route modification. Key points:}
+Sentry's platform enables route modifications at three speed tiers, depending on the scope and complexity of the change. Our MTA Access-A-Ride operation processes thousands of same-day trip modifications daily, and the same real-time routing engine powers rapid turnaround for school transportation changes:
 
 \begin{description}[style=nextline, leftmargin=0.5cm]
-    \item[\faIcon{bolt} \textbf{Same-Day Changes:}] \placeholder{Minor modifications (stop additions, time adjustments, student additions to existing routes) can be processed and communicated to drivers within 2--4 hours.}
+    \item[\faIcon{bolt} \textbf{Same-Day Changes:}] Minor modifications---adding a stop to an existing route, adjusting pickup times, adding a student to a route with available capacity---are processed and pushed to the driver's tablet within 2--4 hours of the request. The routing engine recalculates stop sequencing to accommodate the new stop optimally, updates the driver's turn-by-turn manifest, and sends an automated notification to the affected student's parent or guardian with the updated pickup time. For McKinney-Vento students, whose addresses change frequently, this same-day capability is essential to maintaining uninterrupted service.
 
-    \item[\faIcon{calendar-day} \textbf{24--48 Hour Changes:}] \placeholder{New route creation, route splitting, or significant restructuring can be modeled, optimized, and deployed within 24--48 hours.}
+    \item[\faIcon{calendar-day} \textbf{24--48 Hour Changes:}] New route creation, route splitting, or significant route restructuring (e.g., a new student placement requiring a dedicated route with wheelchair accessibility and a 1:1 aide) can be modeled, optimized, driver-assigned, and deployed within 24--48 hours. The platform evaluates whether the new demand can be absorbed into an existing route, requires a new route, or warrants restructuring adjacent routes to improve overall efficiency. Driver assignment follows automatically based on qualification match and hours availability.
 
-    \item[\faIcon{calendar-week} \textbf{Seasonal / Systemic Changes:}] \placeholder{Large-scale changes (zone restructuring, summer-to-school-year transitions, new school openings) require 2--4 weeks for modeling, driver bidding, and communication.}
+    \item[\faIcon{calendar-week} \textbf{Seasonal / Systemic Changes:}] Large-scale changes---zone restructuring, summer-to-school-year transitions, new school openings, or mid-year enrollment surges---require 2--4 weeks for full scenario modeling, stakeholder review, driver re-bidding (per union contract requirements), parent notification, and phased implementation. The platform's scenario modeling capability allows RIDE to evaluate multiple restructuring options simultaneously: for example, comparing the cost and service impact of splitting Zone~A1's 122 routes into two sub-zones versus redistributing boundary routes to adjacent zones. Each scenario produces projected KPIs (deadhead ratio, cost per student, vehicle count) so RIDE can make data-informed decisions.
 \end{description}
 
-\placeholder{Contrast this with the current system where route changes may depend on operator willingness and capacity. A centralized routing platform ensures that RIDE---not the operator---controls the pace of change.}
+These turnaround times represent a fundamental improvement over a system where route changes depend on individual operator willingness, capacity, and internal scheduling processes. When the System Manager controls the routing platform, RIDE---not the operator---sets the pace of change. Route modifications are executed based on student need and system efficiency, not operator convenience. This is particularly important for the 24.84\% of RIDE riders who are homeless or in foster care, whose transportation needs change unpredictably and cannot wait for an operator's next scheduling cycle.
